@@ -1,184 +1,86 @@
-📊 #FinTracker - Personal Finance Management
-A dynamic personal finance management website built with a responsive front-end using HTML, CSS, Bootstrap, and Font Awesome, and a robust backend using PHP and MySQL. FinTracker enables users to track income and expenses, analyze financial data, and manage their budget through an intuitive interface.
+# 💸 FinTracker – Personal Finance Management Web App
 
-🔗 #Live Demo
-🧑‍💻 GitHub Repository: Your-Repository-Link-HereReplace with your actual repository link.
+**FinTracker** is a web-based personal finance manager built using **PHP**, **MySQL**, **Bootstrap**, and **JavaScript**. The platform empowers users to effectively track their income and expenses, gain financial insights, and manage budgets through a clean, responsive interface.
 
-⚙️ #Features
+---
 
-👤 User Authentication: Register and log in with email and password to manage personal finances.
-💰 Add Income & Expenses: Record income (source, amount, date, description) and expenses (category, amount, date, description).
-📈 Financial Summary: View total income, total expenses, and net savings on the dashboard.
-📊 Financial Analysis: Filter and analyze income/expense records by year, month, or specific date range.
-🧾 Record Management: Edit or delete income and expense records with a tabular view.
-🧭 Navigation Bar:
-Home (Welcome Page)
-Add (Income/Expense)
-Income (View Records)
-Expenses (View Records)
-Analysis (Financial Insights)
-Log Out
+## 🌐 Live Demo
 
+📁 GitHub Repository: [DattaSai13/FinTracker](https://github.com/DattaSai13/FinTracker)
 
+---
 
+## ✨ Features
 
-🛠️ #Tech Stack
-Frontend:
+- 🔐 **User Authentication**  
+  Register and log in securely using email and password.
 
-HTML5
-CSS3
-Bootstrap 5.3.3
-Font Awesome 6.7.2
+- ➕ **Income & Expense Management**  
+  Add, edit, and delete transactions with date, category/source, and description.
 
-Backend:
+- 📊 **Financial Summary Dashboard**  
+  View total income, total expenses, and net savings in a single glance.
 
-PHP
-MySQL
+- 📅 **Data Analysis**  
+  Analyze income and expenses by **year**, **month**, or a **custom date range**.
 
+- 📱 **Responsive UI**  
+  Built with Bootstrap for mobile and desktop compatibility.
 
-🗃️ Database Tables Overview
-👤 admin Table:
+- 🧭 **Easy Navigation**  
+  Navbar includes quick access to Home, Add, Income, Expenses, Analysis, and Logout.
 
+---
 
+## 🛠️ Tech Stack
 
-Field
-Type
-Description
+**Frontend:**
+- HTML5, CSS3
+- Bootstrap 5.3.3
+- JavaScript (for form enhancements)
+- Font Awesome 6.7.2
 
+**Backend:**
+- PHP 7.4+
+- MySQL (Database: `expense_tracker`)
 
+---
 
-Name
-VARCHAR(100)
-User's full name
+## 🗃️ Database Schema Overview
 
+### 👤 `admin` Table – User Authentication
+| Field     | Type        | Description            |
+|-----------|-------------|------------------------|
+| Name      | VARCHAR(100) | User's full name       |
+| DOB       | DATE        | Date of birth          |
+| Phone     | VARCHAR(15) | Contact number         |
+| Email     | VARCHAR(100) | Unique identifier (PK) |
+| Password  | VARCHAR(255) | Hashed password        |
 
-DOB
-DATE
-Date of birth
+### 💰 `income` Table – Income Records
+| Field     | Type         | Description                         |
+|-----------|--------------|-------------------------------------|
+| Sno       | INT (PK)     | Auto-incremented serial number      |
+| Names     | VARCHAR(100) | Linked to `admin.Email`             |
+| Source    | VARCHAR(100) | Source of income                    |
+| Amount    | DECIMAL      | Amount received                     |
+| Date      | DATE         | Date of income                      |
+| Description | TEXT       | Additional details                  |
 
+### 🧾 `expenses` Table – Expense Records
+| Field     | Type         | Description                         |
+|-----------|--------------|-------------------------------------|
+| Sno       | INT (PK)     | Auto-incremented serial number      |
+| Names     | VARCHAR(100) | Linked to `admin.Email`             |
+| Category  | VARCHAR(100) | Expense category                    |
+| Amount    | DECIMAL      | Amount spent                        |
+| Date      | DATE         | Date of expense                     |
+| Description | TEXT       | Additional details                  |
 
-Phone
-VARCHAR(15)
-Phone number
+---
 
 
-Email
-VARCHAR(100)
-Unique email (Primary Key)
-
-
-Password
-VARCHAR(255)
-Password (plain text)
-
-
-💵 income Table:
-
-
-
-Field
-Type
-Description
-
-
-
-Sno
-INT (PK)
-Unique record ID
-
-
-Names
-VARCHAR(100)
-User email (Foreign Key)
-
-
-Source
-VARCHAR(100)
-Income source (e.g., Salary)
-
-
-Amount
-DECIMAL(10,2)
-Income amount
-
-
-Date
-DATE
-Date of income
-
-
-Description
-TEXT
-Optional description
-
-
-🛒 expenses Table:
-
-
-
-Field
-Type
-Description
-
-
-
-Sno
-INT (PK)
-Unique record ID
-
-
-Names
-VARCHAR(100)
-User email (Foreign Key)
-
-
-Category
-VARCHAR(100)
-Expense category (e.g., Rent)
-
-
-Amount
-DECIMAL(10,2)
-Expense amount
-
-
-Date
-DATE
-Date of expense
-
-
-Description
-TEXT
-Optional description
-
-
-
-📋 Setup Instructions
-Prerequisites
-
-Web Server: Apache or similar
-PHP: Version 7.4 or higher with MySQLi extension
-MySQL: MySQL server
-Browser: Any modern web browser
-
-Installation Steps
-
-Clone the Repository:
-git clone https://github.com/YourUsername/FinTracker.git
-cd FinTracker
-
-
-
-🚀 Usage
-
-Register: Navigate to login.html and click the sign-up link (assuming a sign-up page exists) to create an account.
-Log In: Use your email and password in login.html to access the dashboard.
-Manage Finances:
-Add Records: Use in.php for income or exp.php for expenses. Alternatively, use the quick transaction form in new.php.
-View Records: Check income (inctable.php) or expenses (exptable.php) in tabular format with edit/delete options.
-Analyze Data: Use ana.php to select a time period (yearly, monthly, date range) and view results in analysis.php.
-
-#  Some Snapshots of the project
+#  **Some Snapshots of the project**
 
 home page before login  -->  ![Screenshot 2025-06-08 201337](https://github.com/user-attachments/assets/7ad084cd-4f65-4092-a496-004e05e1f246)
 
@@ -191,7 +93,7 @@ income records -->   ![Screenshot 2025-06-08 201437](https://github.com/user-att
 analysis  -->  ![Screenshot 2025-06-08 201513](https://github.com/user-attachments/assets/6e72ba5f-b60f-436b-ae08-0728ce69e0fd)
 
 
-🐞 Known Issues
+🐞 **Known Issues**
 
 SQL Injection Vulnerability: PHP files use unsanitized $_GET/$_POST inputs in SQL queries. Fix: Implement prepared statements (e.g., in upinc.php, income.php).
 Textarea Bug: In edinc.php and edexp.php, textareas incorrectly use the value attribute. Fix: Replace with <textarea><?php echo htmlspecialchars($des ?? ''); ?></textarea>.
@@ -199,7 +101,7 @@ Error Message in exptable.php: Displays "No income records found" for empty expe
 Missing dele() Function: exptable.php lacks the delete confirmation function. Fix: Add <script>function dele() { return confirm("Are you sure you want to delete this expense?"); }</script>.
 
 
-🔒 Security Recommendations
+🔒 **Security Recommendations**
 
 Prepared Statements: Use MySQLi prepared statements to prevent SQL injection.$stmt = $con->prepare("INSERT INTO income (Source, Amount, Date, Description, Names) VALUES (?, ?, ?, ?, ?)");
 $stmt->bind_param("sdsss", $src, $amt, $dt, $des, $name);
@@ -211,7 +113,7 @@ CSRF Protection: Add CSRF tokens to forms to prevent cross-site request forgery.
 Input Validation: Validate inputs (e.g., positive amounts, valid dates) on the server side.
 
 
-🌟 Future Enhancements
+🌟 **Future Enhancements**
 
 Visualizations: Add Chart.js bar/pie charts to new.php or analysis.php for income vs. expense visuals.
 Pagination: Implement pagination in inctable.php and exptable.php for large datasets.
@@ -220,5 +122,5 @@ Mobile App: Develop a companion mobile app for on-the-go finance tracking.
 Budget Alerts: Enhance new.php with customizable budget alerts.
 
 
-📬 Contact
+📬 **Contact**
 For questions or feedback, contact the project maintainer at [datta81069@gmail.com].
